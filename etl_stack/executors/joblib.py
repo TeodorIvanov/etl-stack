@@ -1,7 +1,11 @@
+from functools import partial
+
 from joblib import Parallel, delayed
 from tqdm import tqdm
 
 from etl_stack.executors.base import BaseExecutor
+
+tqdm = partial(tqdm, smoothing=1, dynamic_ncols=True, unit=' docs')
 
 
 class JobLibExecutor(BaseExecutor):
