@@ -8,7 +8,7 @@ A bare-minimum ETL framework using joblib (or anything you want)
 - Build class-based multithreaded ETL pipelines in Python
 - Achieve amazing performance by using [joblib](https://joblib.readthedocs.io/)
 - Get beautiful progress logs thanks to [tqdm](https://pypi.org/project/tqdm/)
-- Write your own job executors to satisfy threading or multiprocessing nees
+- Write your own job executors to satisfy threading or multiprocessing needs
 
 ##### Example #####
 
