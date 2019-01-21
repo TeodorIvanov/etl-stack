@@ -12,3 +12,9 @@ class RandNumTask(BaseTask):
 
     def load(self, document):
         return document
+
+
+if __name__ == '__main__':
+    task = RandNumTask(min_num=0, max_num=100000)
+    results = task.execute()
+    print(results)
