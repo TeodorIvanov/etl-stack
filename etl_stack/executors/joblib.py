@@ -6,19 +6,17 @@ from etl_stack.executors.base import BaseExecutor
 
 class JobLibExecutor(BaseExecutor):
 
-    def execute(self):
-        lazy_transforms = [
+    def get_extracted(self):
+        return [
             delayed(self.task.transform)(document)
             for document in tqdm(self.task.extract())
         ]
-        self.task.on_transform_start()
 
-        transformed = Parallel(n_jobs=self.workers)(tqdm(lazy_transforms))
+    def get_transformed(self, documents):
+        return Parallel(n_jobs=self.workers)(tqdm(documents))
 
-        self.task.on_load_start()
-        loaded = Parallel(n_jobs=self.workers)(
+    def get_loaded(self, transformed):
+        return Parallel(n_jobs=self.workers)(
             delayed(self.task.load)(document)
             for document in tqdm(transformed)
         )
-        self.task.on_task_done(loaded)
-        return loaded
