@@ -1,4 +1,3 @@
-from datetime import datetime
 from etl_stack.tasks.base import BaseTask
 
 
