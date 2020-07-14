@@ -6,7 +6,7 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='etl_stack',
-    url='https://gitlab.aiidatapro.net/teodor/etl-stack',
+    url='https://github.com/TeodorIvanov/etl-stack',
     version='0.0.1',
     # namespace_packages=['adp', 'adp.elastic_doctypes'],
     packages=[p for p in find_packages() if p.partition('.')[0] == 'adp'],
